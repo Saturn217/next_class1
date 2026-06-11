@@ -18,7 +18,7 @@ const Page = () => {
             <input type="password" className="border outline-1 focus:outline-green-300 p-2 w-full rounded-sm" />
           </div>
 
-            <button className=" py-2 bg-black text-white rounded-sm hover:bg-gray-800 hover:cursor-pointer hover:translate-y-1 hover:transition">Login</button>
+            <button className=" py-2 bg-black text-white rounded-sm hover:bg-red-700 hover:cursor-pointer hover:translate-y-1 hover:transition">Login</button>
         </div>
 
       </div>
