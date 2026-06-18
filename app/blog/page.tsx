@@ -17,7 +17,7 @@ const blog = async () => {
 
                 {
                     convPosts.map((post, idx) => (
-                        <div key={idx} className='border border-gray-300 p-4 m-4 rounded-lg shadow-md'>
+                        <div key={idx} className='border border-gray-300 p-4 m-4 rounded-lg shadow-md flex flex-col gap-2.5 hover:shadow-lg transition-shadow duration-300'>
 
                             <div className="flex flex-row justify-between">
                                 <h1 className='text-lg font-bold'>{post.title}</h1>
@@ -46,13 +46,7 @@ const blog = async () => {
                                     <span>Views: {post.views}</span>
                                 </div>
 
-                              
-                               
                             </div>
-
-
-
-
                         </div>
                     ))
                 }
