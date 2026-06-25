@@ -1,6 +1,8 @@
 "use client"
 import React, { ChangeEvent, useState } from 'react'
-import { registerUser } from '../actions/user.actions'
+
+import { registerForUser } from '../actions/registerClient.action'
+import { User } from '../types'
 
 const page = () => {
 
@@ -27,7 +29,7 @@ const page = () => {
 
   const submitForm=async(User:User)=>{
     console.log(User);
-    registerUser(User)
+    registerForUser(User)
     console.log("I am working");
   
   }
@@ -39,7 +41,7 @@ const page = () => {
     return (
         <div className="flex h-screen justify-center items-center px-2">
 
-            <form action={registerUser} className="bg-gray-50 shadow-lg rounded-sm p-10 w-full md:w-1/2  xl:w-1/3 flex-col gap-2 flex justify-center /items-center">
+            <div  className="bg-gray-50 shadow-lg rounded-sm p-10 w-full md:w-1/2  xl:w-1/3 flex-col gap-2 flex justify-center /items-center">
                 <h1 className="text-center text-2xl font-bold">Register Here</h1>
 
                 <div>
@@ -63,7 +65,7 @@ const page = () => {
                 </div>
 
                 <button onClick={()=>submitForm(User)} className=" py-2 bg-black text-white rounded-sm hover:bg-red-700 hover:cursor-pointer hover:translate-y-1 hover:transition">Register</button>
-            </form>
+            </div>
 
         </div>
     )

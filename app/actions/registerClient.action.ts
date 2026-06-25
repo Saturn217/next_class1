@@ -1,10 +1,11 @@
+"use server"
 import { revalidatePath } from "next/cache"
 import { dbConnect } from "../libs/dbconnect"
 import UserModel from "../models/user.model"
 import { redirect } from "next/navigation"
 import { User } from "../types"
 
-export const registerUser = async(form:User)=>{
+export const registerForUser = async(form:User)=>{
 
 
     const user = {
