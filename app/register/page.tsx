@@ -1,10 +1,14 @@
 "use client"
 import React, { ChangeEvent, useState } from 'react'
+import { useActionState, startTransition } from 'react'
 
 import { registerForUser } from '../actions/registerClient.action'
 import { User } from '../types'
 import { useFormik } from 'formik'
 import * as yup from "yup";
+import LoadingSpinner from '../components/LoadingSpinner'
+
+
 
 
 const regsiterSchema = yup.object({
@@ -125,7 +129,8 @@ const page = () => {
                     {formik.touched.password && formik.errors.password && ( <p className="text-red-500 text-sm">{formik.errors.password}</p> )}
                 </div>
 
-                <button type='submit' disabled={formik.isSubmitting} className=" py-2 bg-black text-white rounded-sm hover:bg-red-700 hover:cursor-pointer hover:translate-y-1 hover:transition ">{formik.isSubmitting ? "Registering.... ": "Register"}</button>
+                <button type='submit' disabled={formik.isSubmitting} className=" py-2 bg-black text-white flex items-center justify-center rounded-sm hover:bg-red-700 hover:cursor-pointer hover:translate-y-1 hover:transition ">{formik.isSubmitting ? <LoadingSpinner/>: "Register"}</button>
+            
             </div>
 
         </form>
